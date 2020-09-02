@@ -1,7 +1,21 @@
 <template>
   <article>
     <section>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus explicabo sunt maiores aspernatur commodi debitis, nesciunt, ab, porro eligendi magni perspiciatis ipsum labore. Ipsam similique quae id facilis et doloribus!
+      <p>
+        Web safe HTML fonts are usually universally pre-installed across most devices. 
+        A set of fonts eventually became "web safe fonts", because regardless of the computer, the fonts will safely appear on your website.
+      </p>
+      <p>
+        Using web safe fonts can improve performance compared to when the client needs to make a request to download the fonts that the website is using.
+      </p>
+      <p>
+        This website is created to give an overview of which web safe fonts exists.
+        The website tries to imitate <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a>
+        to allow you to easily pick the wanted font.
+      </p>
+      <p>
+        If you see a web safe font that is missing from the list, please send me a <a href="mailto:gautedevelopment@gmail.com">message.</a>
+      </p>
     </section>
     <footer>
       <created-by-me/>
@@ -32,5 +46,9 @@ footer{
 created-by-me{
   flex: 1;
   color: black;
+}
+
+p a{
+  color: #0059b3;
 }
 </style>

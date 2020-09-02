@@ -5,6 +5,7 @@
 html, body{
   margin: 0;
   height: 100%;
+  letter-spacing: 0.03rem;
 }
 
 #app{
