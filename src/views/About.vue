@@ -40,6 +40,7 @@ footer{
   margin-top: 20px;
   padding: 5px 0;
   display: flex;
+  align-items: center;
   color: var(--grey);
 }
 
