@@ -1,0 +1,23 @@
+:root{
+  --grey:rgba(0,0,0,.6);
+}
+
+html, body{
+  margin: 0;
+  height: 100%;
+}
+
+#app{
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  text-decoration: underline;
+}
