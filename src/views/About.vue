@@ -6,6 +6,9 @@
         A set of fonts eventually became "web safe fonts", because regardless of the computer, the fonts will safely appear on your website.
       </p>
       <p>
+        With web safe fonts all you need to start using them is adding one line of CSS.
+      </p>
+      <p>
         Using web safe fonts can improve performance compared to when the client needs to make a request to download the fonts that the website is using.
       </p>
       <p>
@@ -32,7 +35,7 @@ import { CreatedByMe } from 'gaute-web-components'
 article{
   padding: 0 50px;
   max-width: 60%;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 footer{
