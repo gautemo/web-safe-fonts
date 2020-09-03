@@ -30,8 +30,10 @@ header{
 }
 
 main{
+  max-width: 1440px;
+  width: 100%;
   padding: 0 50px;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 h1{
