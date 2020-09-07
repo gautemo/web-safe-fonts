@@ -38,3 +38,9 @@ a:hover{
 input{
   color: inherit;
 }
+
+.separator{
+  border-right: 1px solid var(--light-grey);
+  height: 100%;
+  margin: 0 12px;
+}

@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
-    <options-dropdown v-model:selected="selected" :options="optionDisplays" name="text" widthsize="8" suffix=""/>
+  <div class="container text">
+    <options-dropdown v-model:selected="selected" :options="optionDisplays" name="text" widthsize="8" suffix="" prefix=""/>
     <div class="separator"></div>
     <input type="text" v-model="customText" placeholder="Type something" class="custom-text" @input="customTextTyped">
   </div>
   <div class="container">
-    <options-dropdown v-model:selected="size" :options="sizes" name="size" widthsize="5" suffix="px"/>
+    <options-dropdown v-model:selected="size" :options="sizes" name="size" widthsize="5" suffix="px" prefix=""/>
     <input type="range" min="8" max="300" v-model="size" class="size-input">
   </div>
 </template>
@@ -15,7 +15,7 @@ import OptionsDropdown from './OptionsDropdown.vue'
 import { customText, options, selected, sizes, size } from '../composable/previewText'
 import { ref, watch } from 'vue'
 
-const optionDisplays = options.map(o => o.display)
+const optionDisplays = Object.keys(options)
 
 export default {
   setup(){
@@ -23,8 +23,12 @@ export default {
       selected.value = 'Custom'
     }
 
-    watch(selected, () => {
-      customText.value = ''
+    watch(selected, (selected, prevSelected) => {
+      if(selected === 'Custom'){
+        customText.value = options[prevSelected]()
+      }else{
+        customText.value = ''
+      }
     })
 
     return { selected, customText, optionDisplays, sizes, size, customTextTyped }
@@ -63,9 +67,8 @@ input{
   flex: 1;
 }
 
-.separator{
-  border-right: 1px solid var(--light-grey);
-  height: 100%;
-  margin: 0 12px;
+.container.text{
+  flex: 2;
 }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <input :list="`${name}-options`" @input="changeInput" v-model="inputText" :placeholder="selected + suffix" :size="widthsize"/>
+  <input :list="`${name}-options`" @input="changeInput" v-model="inputText" :placeholder="prefix + selected + suffix" :size="widthsize"/>
   <datalist :id="`${name}-options`">
     <option v-for="o in options" :value="o" :key="o"></option>
   </datalist>
@@ -14,7 +14,8 @@ export default {
     options: Array,
     selected: [String, Number],
     widthsize: String,
-    suffix: String
+    suffix: String,
+    prefix: String,
   },
   emits: ['update:selected'],
   setup({ options }, {emit}) {
@@ -37,6 +38,7 @@ input{
   border: none;
   outline: none;
   font-weight: bold;
+  padding: 0 5px;
 }
 
 input{
@@ -47,5 +49,10 @@ input{
 
 ::placeholder{
   color: black;
+}
+
+input:hover{
+  background: var(--light-grey);
+  border-radius: 3px;
 }
 </style>
