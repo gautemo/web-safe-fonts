@@ -24,9 +24,9 @@ export default {
     }
 
     watch(selected, (selected, prevSelected) => {
-      if(selected === 'Custom'){
+      if(selected === 'Custom' && customText.value.length === 0){
         customText.value = options[prevSelected]()
-      }else{
+      }else if(selected !== 'Custom'){
         customText.value = ''
       }
     })
