@@ -1,19 +1,19 @@
 <template>
   <filter-bar/>
   <view-settings/>
-  <font name="test"/>
+  <font-list/>
 </template>
 
 <script>
 import FilterBar from '../components/FilterBar.vue'
 import ViewSettings from '../components/ViewSettings.vue'
-import Font from '../components/Font.vue'
+import FontList from '../components/FontList.vue'
 
 export default {
   components:{
     FilterBar,
     ViewSettings,
-    Font
+    FontList
   }
 }
 </script>

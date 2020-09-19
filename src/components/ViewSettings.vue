@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="container">
     <span>
       View:
     </span>
-    <button>
+    <button @click="selectGrid" :class="{active: viewSelected === 'grid'}">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="view-grid w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
       <span>Grid</span>
     </button>
-    <button>
+    <button @click="selectList" :class="{active: viewSelected === 'list'}">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="view-list w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
       <span>List</span>
     </button>
@@ -16,9 +16,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import OptionsDropdown from './OptionsDropdown.vue'
 import { ref, computed } from 'vue'
+import { selectList, selectGrid, viewSelected } from '../composable/listView'
 
 const options = ['Name']
 
@@ -28,7 +29,7 @@ export default {
     const dropdownWidth = computed(() => {
       return sortSelected.value.length + 'Sort by: '.length
     })
-    return { options, sortSelected, dropdownWidth }
+    return { options, sortSelected, dropdownWidth, selectList, selectGrid, viewSelected }
   },
   components:{
     OptionsDropdown
@@ -37,9 +38,9 @@ export default {
 </script>
 
 <style scoped>
-div{
+.container{
   padding: 10px 0;
-  height: 35px;
+  height: 25px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -61,5 +62,13 @@ button:hover{
 
 button span{
   margin-left: 2px;
+}
+
+button{
+  opacity: 0.5;
+}
+
+.active{
+  opacity: 1;
 }
 </style>

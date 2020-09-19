@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import About from './views/About.vue'
 import AllFonts from './views/AllFonts.vue'
-import Font from './views/Font.vue'
 
 const routes = [
   {
@@ -12,10 +11,10 @@ const routes = [
     path: '/about',
     component: About
   },
-  {
-    path: '/:font',
-    component: Font
-  },
+  // {
+  //   path: '/:font',
+  //   component: Font
+  // },
 ]
 
 export const router = createRouter({

@@ -34,6 +34,7 @@ main{
   width: 100%;
   padding: 0 50px;
   margin: 20px auto;
+  box-sizing: border-box;
 }
 
 h1{
