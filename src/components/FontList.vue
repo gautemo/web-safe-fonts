@@ -162,5 +162,9 @@ export default {
   .grid{
     grid-template-columns: 1fr;
   }
+
+  .kaoemoji{
+    font-size: 3rem;
+  }
 }
 </style>
