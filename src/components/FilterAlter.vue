@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <button @click="showDropdown = !showDropdown" :class="{active: showDropdown}">
-      Categories
+    <button @click="showDropdown = !showDropdown" :class="{active: showDropdown || categoriesText !== 'Categories'}">
+      {{categoriesText}}
       <svg :style="{transform: `rotate(${showDropdown ? 180 : 360})`}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" class="iconify iconify--bx" width="1.3em" height="1.3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M11.998 17l7-8h-14z" class="caret"></path></svg>
     </button>
     <label>
@@ -28,14 +28,27 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { categories } from '../composable/filter'
 import { italic, bold } from '../composable/previewText'
 
 export default {
   setup(){
     const showDropdown = ref(false)
-    return { showDropdown, categories, italic, bold }
+
+    const categoriesText = computed(() => {
+      const entries = Object.entries(categories)
+      const selected = entries.filter(([_, checked]) => checked)
+      if(selected.length === entries.length){
+        return 'Categories'
+      }else if(selected.length === 0){
+        return 'No categories selected'
+      }else{
+        return selected[0][0] + `${selected.length > 1 ? ` + ${selected.length - 1}` : ''}`
+      }
+    })
+
+    return { showDropdown, categories, italic, bold, categoriesText }
   }
 }
 </script>
