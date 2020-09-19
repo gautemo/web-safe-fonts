@@ -72,4 +72,10 @@ button{
 .active{
   opacity: 1;
 }
+
+@media only screen and (max-width: 600px) {
+  .container{
+    display: none;
+  }
+}
 </style>

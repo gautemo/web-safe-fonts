@@ -110,4 +110,23 @@ aside{
   width: 6px;
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 600px) {
+  main, header{
+    padding: 0 10px;
+  }
+
+  :not(h1) > .router-link-exact-active{
+    display: none;
+  }
+
+  :not(h1) > a{
+    font-size: 0.8rem;
+    padding: 0;
+  }
+
+  h1{
+    font-size: 1rem;
+  }
+}
 </style>

@@ -106,4 +106,14 @@ export default {
 .grid{
   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
 }
+
+@media only screen and (max-width: 600px) {
+  .list{
+    margin-top: 10px;
+  }
+  
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
 </style>
