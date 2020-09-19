@@ -13,7 +13,7 @@ export default {
     name: String,
     options: Array,
     selected: [String, Number],
-    widthsize: String,
+    widthsize: Number,
     suffix: String,
     prefix: String,
   },

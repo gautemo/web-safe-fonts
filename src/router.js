@@ -11,10 +11,6 @@ const routes = [
     path: '/about',
     component: About
   },
-  // {
-  //   path: '/:font',
-  //   component: Font
-  // },
 ]
 
 export const router = createRouter({

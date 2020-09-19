@@ -1,11 +1,11 @@
 <template>
   <div class="container text">
-    <options-dropdown v-model:selected="selected" :options="optionDisplays" name="text" widthsize="8" suffix="" prefix=""/>
+    <options-dropdown v-model:selected="selected" :options="optionDisplays" name="text" :widthsize="8" suffix="" prefix=""/>
     <div class="separator"></div>
     <input type="text" v-model="customText" placeholder="Type something" class="custom-text" @input="customTextTyped">
   </div>
   <div class="container">
-    <options-dropdown v-model:selected="size" :options="sizes" name="size" widthsize="5" suffix="px" prefix=""/>
+    <options-dropdown v-model:selected="size" :options="sizes" name="size" :widthsize="5" suffix="px" prefix=""/>
     <input type="range" min="8" max="300" v-model="size" class="size-input">
   </div>
 </template>

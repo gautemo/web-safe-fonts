@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <button @click="showDropdown = !showDropdown">
+    <button @click="showDropdown = !showDropdown" :class="{active: showDropdown}">
       Categories
       <svg :style="{transform: `rotate(${showDropdown ? 180 : 360})`}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" class="iconify iconify--bx" width="1.3em" height="1.3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M11.998 17l7-8h-14z" class="caret"></path></svg>
     </button>
@@ -56,6 +56,18 @@ button{
   display: flex;
   align-items: center;
   gap: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover{
+  background: #f1f3f4;
+}
+
+.active{
+  border-color: var(--blue);
+  background-color: #e8f0fe;
+  cursor: default;
 }
 
 .dropdown{
@@ -84,6 +96,12 @@ button{
   font-size: 1rem;
 }
 
+label{
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
 .x{
   height: 20px;
   width: 20px;
@@ -96,5 +114,6 @@ button{
 
 input[type=checkbox]{
   transform: scale(1.3);
+  cursor: pointer;
 }
 </style>

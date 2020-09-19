@@ -1,6 +1,6 @@
 <template>
   <div class="list" :class="{grid: viewSelected === 'grid'}">
-    <font v-for="font in fonts" :key="font.name" :name="font.name"/>
+    <font v-for="font in fonts" :key="font.name" :name="font.name" @click="addFont(font)"/>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import Font from './Font.vue'
 import { viewSelected } from '../composable/listView'
 import { computed } from 'vue'
 import { search, categories } from '../composable/filter'
+import { addFont } from '../composable/selectedFonts'
 
 const fonts = [
   {
@@ -74,7 +75,7 @@ export default {
               .sort((a,b) => a.name.localeCompare(b.name))
     })
 
-    return { fonts: showFonts, viewSelected }
+    return { fonts: showFonts, viewSelected, addFont }
   },
   components: {
     Font
