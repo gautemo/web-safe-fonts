@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { search } from '../composable/search.ts'
+import { search } from '../composable/filter.ts'
 
 export default {
   setup(){

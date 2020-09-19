@@ -4,7 +4,7 @@
 
 <script>
 import { reset } from '../composable/previewText'
-import { search } from '../composable/search'
+import { search } from '../composable/filter'
 
 export default {
   setup(){

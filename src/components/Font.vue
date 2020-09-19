@@ -3,21 +3,21 @@
     <h2>
       {{name}}
     </h2>
-    <p :style="{ 'font-size': `${size}px`, 'font-family': name}">
+    <p :style="{ 'font-size': `${size}px`, 'font-family': name, 'font-style': italic ? 'italic' : 'normal', 'font-weight': bold ? 'bold' : 'normal'}">
       {{text}}
     </p>
   </div>
 </template>
 
 <script>
-import { text, size } from '../composable/previewText'
+import { text, size, italic, bold } from '../composable/previewText'
 
 export default {
   props:{
     name: String
   },
   setup(){
-    return { text, size }
+    return { text, size, italic, bold }
   }
 }
 </script>
@@ -36,7 +36,7 @@ div:hover{
 }
 
 h2{
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   margin: 5px 0;
 }
