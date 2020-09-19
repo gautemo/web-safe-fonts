@@ -34,6 +34,7 @@
 
 <script>
 import { CreatedByMe } from 'gaute-web-components'
+export default{}
 </script>
 
 <style scoped>
