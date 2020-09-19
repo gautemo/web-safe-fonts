@@ -42,7 +42,6 @@ header{
   gap: 10px;
   align-items: center;
   padding: 0 50px;
-  font-size: 1.2rem;
   min-height: var(--min-header-size);
 }
 
@@ -76,6 +75,7 @@ a:hover{
   align-items: center;
   padding: 0 20px;
   border-bottom: 2px solid transparent;
+  font-weight: bold;
 }
 
 :not(h1) > .router-link-exact-active{

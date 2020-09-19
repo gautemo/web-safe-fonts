@@ -110,9 +110,12 @@ button:hover{
 }
 
 label{
-  font-weight: bold;
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+.dropdown label{
+  font-weight: bold;
 }
 
 .x{

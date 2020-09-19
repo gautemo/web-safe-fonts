@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <span>
+    <span class="view-text">
       View:
     </span>
     <button @click="selectGrid" :class="{active: viewSelected === 'grid'}">
@@ -70,7 +70,13 @@ button{
 }
 
 .active{
-  opacity: 1;
+  opacity: 0.9;
+}
+
+.view-text{
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--grey);
 }
 
 @media only screen and (max-width: 600px) {

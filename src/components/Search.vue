@@ -42,10 +42,7 @@ input{
   outline: none;
   flex: 1;
   font-size: 1.05rem;
-}
-
-::placeholder{
-  font-weight: 500; /* TODO check if font with little bold is possible same for Type text here input */ 
+  width: 125px;
 }
 
 .hide{

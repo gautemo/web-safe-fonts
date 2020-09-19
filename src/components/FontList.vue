@@ -2,14 +2,21 @@
   <div class="list" :class="{grid: viewSelected === 'grid'}">
     <font v-for="font in fonts" :key="font.name" :name="font.name" @click="addFont(font)"/>
   </div>
+  <div v-if="fonts.length === 0" class="notfound">
+    <p class="kaoemoji">{{kaoemoji}}</p>
+    <p class="reason">Can’t find any fonts.</p>
+    <button @click="reset">Clear your filters and try again.</button>
+  </div>
 </template>
 
 <script lang="ts">
 import Font from './Font.vue'
 import { viewSelected } from '../composable/listView'
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { search, categories } from '../composable/filter'
 import { addFont } from '../composable/selectedFonts'
+import { getRandomKaoemoji } from '../assets/kaoemoji'
+import { reset } from '../composable/previewText'
 
 const fonts = [
   {
@@ -88,7 +95,15 @@ export default {
               .sort((a,b) => a.name.localeCompare(b.name))
     })
 
-    return { fonts: showFonts, viewSelected, addFont }
+    watch(showFonts, (newValue, oldValue) => {
+      if(newValue.length === 0 && oldValue.length !== 0){
+        kaoemoji.value = getRandomKaoemoji()
+      }
+    })
+
+    const kaoemoji = ref('')
+
+    return { fonts: showFonts, viewSelected, addFont, kaoemoji, reset }
   },
   components: {
     Font
@@ -105,6 +120,38 @@ export default {
 
 .grid{
   grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+
+.notfound{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.kaoemoji{
+  font-size: 5rem;
+  color: var(--grey);
+}
+
+.reason{
+  color: var(--grey);
+}
+
+.notfound button{
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--blue);
+  font-weight: bold;
+  cursor: pointer;
+  padding: 15px 25px;
+}
+
+.notfound button:hover{
+  background: rgba(26,115,232,.04);
+  color: #174ea6;
 }
 
 @media only screen and (max-width: 600px) {

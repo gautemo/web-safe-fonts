@@ -47,9 +47,10 @@ input{
 
 .custom-text{
   border-bottom: 1px solid var(--light-grey);
-  width: 100%;
+  width: 125px;
   font-size: 1.05rem;
   margin: 1px 0;
+  flex: 1;
 }
 
 .custom-text:focus{
@@ -59,6 +60,7 @@ input{
 
 .size-input{
   width: 100%;
+  min-width: 60px;
 }
 
 .container{

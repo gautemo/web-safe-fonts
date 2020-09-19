@@ -37,7 +37,6 @@ export default {
 input{
   border: none;
   outline: none;
-  font-weight: bold;
   padding: 0 5px;
 }
 
@@ -48,7 +47,7 @@ input{
 }
 
 ::placeholder{
-  color: black;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 input:hover{
