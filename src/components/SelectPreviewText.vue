@@ -68,7 +68,19 @@ input{
 }
 
 .container.text{
-  flex: 2;
+  flex: 3;
+}
+
+@media only screen and (max-width: 850px) {
+  input[type=range]{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  div.container{
+    display: none;
+  }
 }
 
 </style>

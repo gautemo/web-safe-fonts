@@ -63,6 +63,7 @@ main{
 h1{
   flex: 1;
   font-size: 1.6rem;
+  white-space: nowrap;
 }
 
 a:hover{

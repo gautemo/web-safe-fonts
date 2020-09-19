@@ -5,6 +5,7 @@ const open = ref(false)
 interface font{
   name: string;
   type: string;
+  css: string;
 }
 
 const selected = ref<font[]>([])

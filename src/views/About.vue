@@ -2,8 +2,13 @@
   <article>
     <section>
       <p>
-        Web safe HTML fonts are usually universally pre-installed across most devices. 
+        Web safe fonts are fonts likely to be present on a wide range of computer systems.
+        This is because the fonts are usually universally pre-installed across most devices. 
         A set of fonts eventually became "web safe fonts", because regardless of the computer, the fonts will safely appear on your website.
+        The list of web safe fonts could change over the time.
+        They are used by Web content authors to increase the likelihood that content displays in their chosen font. 
+        If a visitor to a Web site does not have the specified font, their browser tries to select a similar alternative, 
+        based on the author-specified fallback fonts and generic families or it uses font substitution defined in the visitor's operating system.
       </p>
       <p>
         With web safe fonts all you need to start using them is adding one line of CSS.
@@ -34,8 +39,10 @@ import { CreatedByMe } from 'gaute-web-components'
 <style scoped>
 article{
   padding: 0 50px;
-  max-width: 60%;
+  max-width: min(80%, 550px);
   margin: 0 auto;
+  line-height: 1.3rem;
+  letter-spacing: 1px;
 }
 
 footer{

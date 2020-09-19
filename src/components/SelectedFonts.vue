@@ -17,7 +17,7 @@
         <p>CSS rules to specify families</p>
         <code>
           <p v-for="font in selected" :key="font.name">
-            font-family: '{{font.name}}';
+            font-family: {{font.css}};
           </p>
         </code>
       </div>
@@ -140,7 +140,7 @@ code{
   display: block;
 }
 code p{
-  margin: 0;
+  margin: 3px 0;
   white-space: pre-line;
   word-break: break-all;
 }
