@@ -8,7 +8,7 @@
   "dependencies": {
     "gaute-web-components": "^1.0.2",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-beta.10"
+    "vue-router": "^4.0.0-beta.11"
   },
   "devDependencies": {
     "vite": "1.0.0-rc.4",

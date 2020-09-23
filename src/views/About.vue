@@ -17,7 +17,7 @@
         Using web safe fonts can improve performance compared to when the client needs to make a request to download the fonts that the website is using.
       </p>
       <p>
-        This website is created to give an overview of which web safe fonts exists.
+        This website is created to give an overview of which web safe fonts exists and how they look.
         The website tries to imitate <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a>
         to allow you to easily pick the wanted font.
       </p>

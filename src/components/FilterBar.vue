@@ -27,7 +27,7 @@ export default {
   border-radius: 100px;
 }
 
-.filter-bar >>> .container{
+.filter-bar ::v-deep(.container){
   padding: 5px 10px;
 }
 
