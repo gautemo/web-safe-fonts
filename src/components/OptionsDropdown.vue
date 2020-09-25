@@ -1,5 +1,5 @@
 <template>
-  <label>
+  <label :for="labelfor">
     <input :list="`${name}-options`" @input="changeInput" v-model="inputText" :size="widthsize"/>
     <span class="value">{{prefix + selected + suffix}}</span>
   </label>
@@ -19,6 +19,7 @@ export default {
     widthsize: Number,
     suffix: String,
     prefix: String,
+    labelfor: String,
   },
   emits: ['update:selected'],
   setup({ options }, {emit}) {

@@ -8,8 +8,8 @@
     </label>
   </div>
   <div class="container">
-    <options-dropdown v-model:selected="size" :options="sizes" name="size" :widthsize="5" suffix="px" prefix=""/>
-    <input type="range" min="8" max="300" v-model="size" class="size-input">
+    <options-dropdown v-model:selected="size" :options="sizes" name="size" :widthsize="5" suffix="px" prefix="" labelfor="sizerange"/>
+    <input type="range" min="8" max="300" v-model="size" class="size-input" id="sizerange">
   </div>
 </template>
 
