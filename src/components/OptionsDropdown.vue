@@ -1,5 +1,8 @@
 <template>
-  <input :list="`${name}-options`" @input="changeInput" v-model="inputText" :placeholder="prefix + selected + suffix" :size="widthsize"/>
+  <label>
+    <input :list="`${name}-options`" @input="changeInput" v-model="inputText" :size="widthsize"/>
+    <span class="value">{{prefix + selected + suffix}}</span>
+  </label>
   <datalist :id="`${name}-options`">
     <option v-for="o in options" :value="o" :key="o"></option>
   </datalist>
@@ -34,20 +37,27 @@ export default {
 </script>
 
 <style scoped>
+label{
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+
 input{
   border: none;
   outline: none;
   padding: 0 5px;
-}
-
-input{
   caret-color: transparent;
   cursor: default;
   height: 100%;
+  grid-area: 1 / 1;
+  background: transparent;
+  z-index: 2;
 }
 
-::placeholder{
+.value{
   color: rgba(0, 0, 0, 0.8);
+  grid-area: 1 / 1;
 }
 
 input:hover{

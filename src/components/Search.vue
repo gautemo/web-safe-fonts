@@ -19,10 +19,10 @@ export default {
 
 <style scoped>
 label{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   flex: 1;
-  position: relative;
 }
 
 .search,.x{
@@ -42,22 +42,26 @@ label{
 input{
   border: none;
   outline: none;
-  flex: 1;
   font-size: 1.05rem;
   width: 125px;
+  background: transparent;
+  z-index: 2;
+  grid-area: 1 / 2;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hide{
-  visibility: hidden;
+  display: none;
 }
 
 .placeholder{
-  position: absolute;
-  left: 36px;
   color: var(--grey);
+  grid-area: 1 / 2;
+  padding-left: 2px;
 }
 
 input:not(:placeholder-shown) + .placeholder{
-  visibility: hidden;
+  display: none;
 }
 </style>

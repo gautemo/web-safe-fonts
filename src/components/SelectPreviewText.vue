@@ -2,7 +2,10 @@
   <div class="container text">
     <options-dropdown v-model:selected="selected" :options="optionDisplays" name="text" :widthsize="8" suffix="" prefix=""/>
     <div class="separator"></div>
-    <input type="text" v-model="customText" placeholder="Type something" class="custom-text" @input="customTextTyped">
+    <label class="custom-text">
+      <input type="text" v-model="customText" placeholder=" " @input="customTextTyped">
+      <span class="placeholder">Type something</span>
+    </label>
   </div>
   <div class="container">
     <options-dropdown v-model:selected="size" :options="sizes" name="size" :widthsize="5" suffix="px" prefix=""/>
@@ -47,10 +50,25 @@ input{
 
 .custom-text{
   border-bottom: 1px solid var(--light-grey);
-  width: 125px;
-  font-size: 1.05rem;
   margin: 1px 0;
   flex: 1;
+  width: 125px;
+  display: grid;
+}
+
+.custom-text input{
+  font-size: 1.05rem;
+  width: 100%;
+  background: transparent;
+  z-index: 2;
+  grid-area: 1 / 1;
+  box-sizing: border-box;
+}
+
+.placeholder{
+  color: var(--grey);
+  grid-area: 1 / 1;
+  padding-left: 2px;
 }
 
 .custom-text:focus{
@@ -71,6 +89,10 @@ input{
 
 .container.text{
   flex: 3;
+}
+
+input:not(:placeholder-shown) + .placeholder{
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 850px) {
