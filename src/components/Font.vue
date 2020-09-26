@@ -43,5 +43,6 @@ h2{
 
 p{
   overflow-wrap: break-word;
+  word-break: break-word;
 }
 </style>

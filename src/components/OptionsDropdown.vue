@@ -54,11 +54,13 @@ input{
   grid-area: 1 / 1;
   background: transparent;
   z-index: 2;
+  cursor: pointer;
 }
 
 .value{
   color: rgba(0, 0, 0, 0.8);
   grid-area: 1 / 1;
+  font-size: 0.95rem;
 }
 
 input:hover{
